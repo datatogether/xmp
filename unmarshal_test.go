@@ -5,17 +5,17 @@ import (
 	"testing"
 )
 
-func TestXmpMetaFromObject(t *testing.T) {
-	data, err := XmpMetaFromObject([]byte(xmp))
-	fmt.Println(data)
+func TestUnmarshal(t *testing.T) {
+	packet, err := Unmarshal([]byte(xmpExample))
 	if err != nil {
 		t.Error(err.Error())
 		return
 	}
 
+	fmt.Println(packet)
 }
 
-const xmp = `<?xpacket begin="" id="W5M0MpCehiHzreSzNTczkc9d"?>
+const xmpExample = `<?xpacket begin="" id="W5M0MpCehiHzreSzNTczkc9d"?>
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c005 78.147326, 2012/08/23-13:03:03        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description rdf:about=""
