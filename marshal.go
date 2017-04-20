@@ -27,10 +27,11 @@ type POD struct {
 // AsPOD turns an XMPPacket into a Project Open Data struct
 func (p *XMPPacket) AsPOD() *POD {
 	return &POD{
-		Title:       p.RDF.Description.Title,
-		Description: p.RDF.Description.Description,
-		// Keyword:     p.Keywords,
-		Modified: p.RDF.Description.ModifyDate,
+		Title:       p.RDF.Description.Title.Default(),
+		Description: p.RDF.Description.Description.Default(),
+		Keyword:     p.RDF.Description.Subject.Default(),
+		Modified:    p.RDF.Description.ModifyDate,
+		Publisher:   p.RDF.Description.Creator.String(),
 		// TODO
 	}
 }

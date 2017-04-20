@@ -1,7 +1,6 @@
 package xmp
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -11,8 +10,9 @@ func TestUnmarshal(t *testing.T) {
 		t.Error(err.Error())
 		return
 	}
-
-	fmt.Println(packet)
+	if packet == nil {
+		t.Error("packet can't be nil")
+	}
 }
 
 const xmpExample = `<?xpacket begin="" id="W5M0MpCehiHzreSzNTczkc9d"?>
