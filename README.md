@@ -43,4 +43,4 @@ For more information on what XMP is and what it does, read the [XMP Wikipedia pa
 
 Technical documentation can be built with `godoc .` or, if your `$GOPATH` and repo structure is set up correctly, with something like `godoc -http=:6060 &` followed by browsing to http://localhost:6060/pkg/github.com/datatogether.
 
-More information coming soon; i nthe menatime please feel free to file issues and to improve htis README via pull requests.
+More information coming soon; in the meantime please feel free to file issues and to improve htis README via pull requests.
