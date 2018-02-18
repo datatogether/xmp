@@ -24,6 +24,16 @@ type POD struct {
 	Rights       string     `json:"rights"`
 }
 
+func (p *POD) AsObject() (map[string]interface{}, error) {
+	data, err := json.Marshal(p)
+	if err != nil {
+		return nil, err
+	}
+	obj := map[string]interface{}{}
+	err = json.Unmarshal(data, &obj)
+	return obj, err
+}
+
 // AsPOD turns an XMPPacket into a Project Open Data struct
 func (p *XMPPacket) AsPOD() *POD {
 	return &POD{
